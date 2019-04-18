@@ -24,6 +24,6 @@ class GameController extends AbstractController
             $items=array_merge($oeufs, $mechants);
             shuffle($items);
 
-        return $this->twig->render('Game/index.html.twig', ['items' => $items]);
+        return $this->twig->render('Game/Levelone.html.twig', ['items' => $items]);
     }
 }
