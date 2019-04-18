@@ -1,21 +1,20 @@
 <!-- Modal -->
-{% for item in items %}
-<div class="modal fade" id="modal{{ loop.index }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalmystere" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
                 <div class="card mb-3">
-                    <h3 class="card-header">{{ item.name }}</h3>
+                    <h3 class="card-header"></h3>
                     <div class="card-body">
-                        <h5 class="card-title">{{ item.gender }}</h5>
-                        <h6 class="card-subtitle text-muted">{{ item.origin }}</h6>
+                        <h5 class="card-title"></h5>
+                        <h6 class="card-subtitle text-muted"></h6>
                     </div>
-                    <img src="{{ item.image }}" alt="Card image" class="img-fluid img-thumbnail">
+                    <img src="" alt="Card image" class="img-fluid img-thumbnail">
                     <div class="card-body">
                         <p class="card-text"></p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">{{ item.skills }}</li>
+                        <li class="list-group-item">blablabla</li>
                         <li class="list-group-item">Dapibus ac facilisis in</li>
                         <li class="list-group-item">Vestibulum at eros</li>
                     </ul>
@@ -30,4 +29,3 @@
         </div>
     </div>
 </div>
-{% endfor %}
