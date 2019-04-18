@@ -2,12 +2,5 @@
 
 {% block content %}
     <h1>Items</h1>
-    <ul>
-        {% for item in items %}
-            <li><a href="/item/show/{{ item.id }}">{{ item.id }}. {{ item.title }}</a></li>
-        {% else %}
-            <li>Nothing to display</li>
-        {% endfor %}
-    </ul>
-    <a href="/item/add">Ajouter</a>
+    {{ dump(item) }}
 {% endblock %}
