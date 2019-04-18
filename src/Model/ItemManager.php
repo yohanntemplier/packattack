@@ -9,6 +9,7 @@
 
 namespace App\Model;
 
+use GuzzleHttp;
 /**
  *
  */
@@ -17,57 +18,36 @@ class ItemManager extends AbstractManager
     /**
      *
      */
-    const TABLE = 'item';
+
 
     /**
      *  Initializes this class.
      */
-    public function __construct()
+    /*public function __construct()
     {
         parent::__construct(self::TABLE);
-    }
+    }*/
 
 
-    /**
-     * @param array $item
-     * @return int
-     */
-    public function insert(array $item): int
+    public function vasChercherLesDonneesDelApi()
     {
-        // prepared request
-        $statement = $this->pdo->prepare("INSERT INTO $this->table (`title`) VALUES (:title)");
-        $statement->bindValue('title', $item['title'], \PDO::PARAM_STR);
+        $client = new GuzzleHttp\Client([
+                'base_uri' => 'http://easteregg.wildcodeschool.fr',
+            ]
+        );
 
-        if ($statement->execute()) {
-            return (int)$this->pdo->lastInsertId();
-        }
+        $response = $client->request('GET', '/api/eggs');
+
+
+        $body = $response->getBody();
+
+
+        $truc=$body->getContents();
+        $truc= GuzzleHttp\json_decode($truc,true);
+        return $truc;
+
+
     }
 
 
-    /**
-     * @param int $id
-     */
-    public function delete(int $id): void
-    {
-        // prepared request
-        $statement = $this->pdo->prepare("DELETE FROM $this->table WHERE id=:id");
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
-        $statement->execute();
-    }
-
-
-    /**
-     * @param array $item
-     * @return bool
-     */
-    public function update(array $item):bool
-    {
-
-        // prepared request
-        $statement = $this->pdo->prepare("UPDATE $this->table SET `title` = :title WHERE id=:id");
-        $statement->bindValue('id', $item['id'], \PDO::PARAM_INT);
-        $statement->bindValue('title', $item['title'], \PDO::PARAM_STR);
-
-        return $statement->execute();
-    }
 }
