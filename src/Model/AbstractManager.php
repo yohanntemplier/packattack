@@ -34,7 +34,7 @@ abstract class AbstractManager
      * Initializes Manager Abstract class.
      * @param string $table
      */
-    public function __construct(string $table)
+   /* public function __construct(string $table)
     {
         $this->table = $table;
         $this->className = __NAMESPACE__ . '\\' . ucfirst($table);
@@ -46,7 +46,7 @@ abstract class AbstractManager
      *
      * @return array
      */
-    public function selectAll(): array
+    /*public function selectAll(): array
     {
         return $this->pdo->query('SELECT * FROM ' . $this->table)->fetchAll();
     }
@@ -58,7 +58,7 @@ abstract class AbstractManager
      *
      * @return array
      */
-    public function selectOneById(int $id)
+  /*  public function selectOneById(int $id)
     {
         // prepared request
         $statement = $this->pdo->prepare("SELECT * FROM $this->table WHERE id=:id");
@@ -66,5 +66,5 @@ abstract class AbstractManager
         $statement->execute();
 
         return $statement->fetch();
-    }
+    }*/
 }
