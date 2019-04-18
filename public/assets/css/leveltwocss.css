@@ -1,7 +1,8 @@
 body {
-    padding-top: 250px;
-    background-image: url("../images/garden.jpg");
+    padding-top: 100px;
+    background-image: url("../images/phareouest.jpg");
     background-repeat: no-repeat;
+    height: 59.5rem;
     background-size: cover;
     font-family: 'Press Start 2P', cursive;
 
@@ -56,6 +57,3 @@ h3 {
     font-family: 'Press Start 2P', cursive;
 }
 
-.mystere {
-    height: 20%;
-}

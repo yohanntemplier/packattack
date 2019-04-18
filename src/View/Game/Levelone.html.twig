@@ -1,8 +1,14 @@
 {% extends 'layout.html.twig' %}
-{% block stylesheet %}<link rel="stylesheet" href="/assets/css/levelonecss.css">{% endblock %}
+
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/levelonecss.css">
+{% endblock %}
+
 {% block page %}
 {% include 'Game/_modal.html.twig' %}
+    {% include 'Game/_modalmystere.html.twig' %}
     <div class="container-fluid">
+        <audio src="http://le_serveur/lechemin/verslefichier.mp3" autoplay loop></audio>
+        <button type="button" class="btn btn-danger offset-11"> EGGS</button>
             <div class="row">
                 {% for item in items %}
                 <div class="col-1">
@@ -13,8 +19,12 @@
                     </a>
                 </div>
                 {%  endfor %}
+                <div class="col-1 mystere">
+                    <a data-target="#modalmystere" data-toggle="modal">
+                        <img src="/assets/images/eggmystere.png"></a>
+                </div>
             </div>
     </div>
-{% endblock %}
 
+{% endblock %}
 

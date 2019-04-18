@@ -1,5 +1,6 @@
 <!-- Modal -->
 {% for item in items %}
+<<<<<<< HEAD
     <div class="modal fade" id="modal{{ loop.index }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -11,8 +12,8 @@
                             <h5 class="card-title">{{ item.species }}{{ item.rarity ?  item['rarity'] }}</h5>
                             <h6 class="card-subtitle text-muted">{{ item.gender }}</h6>
                         </div>
-                        <img src="{{ item.image }}" alt="Card image" height="400px>
-                    <div class=" card-body">
+                        <img src="{{ item.image }}" alt="Card image" class="img-fluid img-thumbnail>
+                    <div class="card-body">
                     </div>
                     <ul class="list-group list-group-flush">
                         {% if item.skills is defined %}

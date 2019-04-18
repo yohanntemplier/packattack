@@ -22,6 +22,7 @@ class GameController extends AbstractController
         shuffle($items);
         return $this->twig->render('Game/Levelone.html.twig', ['items' => $items]);
     }
+
     public function leveltwo()
     {
         $mechants = [];
