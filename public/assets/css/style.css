@@ -1,3 +1,50 @@
-.fond{
-    background-image: url("/assets/images/HOME.jpg");
+body{
+    background-image: url("/assets/images/home.jpg");
+    background-repeat: no-repeat;
+}
+
+.title h1{
+    text-align: center;
+    margin-top: 2em;
+    font-family: "Press Start 2P", sans-serif;
+    color: #ECD721;
+    font-size: 4em;
+}
+
+.rules h2{
+    font-family: "Press Start 2P", sans-serif;
+    color: #ECD721;
+    text-align: center;
+    margin-top: 3em;
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+
+.play{
+    font-family: "Press Start 2P", sans-serif;
+    color: #FFFFFF;
+    background-color: #ECD721;
+    border-radius: 10px;
+    font-size: 2.5em;
+    margin-left: 5em;
+    margin-top: 13em;
+}
+
+.logo{
+    max-width: 7%;
+    padding-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+span{
+    font-family: "Press Start 2P", sans-serif;
+    color: #ECD721;
+    font-size: 2em;
+    margin-top: 2em;
+}
+li{
+    list-style-image: url("/assets/images/images.png");
+    margin-left: 13em;
+    margin-top: 2em;
 }
