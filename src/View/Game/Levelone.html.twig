@@ -3,50 +3,22 @@
 {% block stylesheet %}<link rel="stylesheet" href="/assets/css/levelonecss.css">{% endblock %}
 
 {% block page %}
-{% include 'Home/_modal.html.twig' %}
+    {{ dump(items) }}
+{% include 'Game/_modal.html.twig' %}
 
     <div class="container-fluid">
 
-        {% for row in range (1, 10) %}
+        {% for item in items %}
 
             <div class="row">
-                <div class="col-1">
-                     <img src="/assets/images/eggs_005.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_009.png">
-                </div>
 
                 <div class="col-1">
-                    <img src="/assets/images/eggs_005.png">
+                    <a data-target="#modal{{ loop.index }}" data-toggle="modal">
+                     <img src="/assets/images/eggs_005.png">
+                    </a>
                 </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_009.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_005.png">
-            </div>
-            <div class="col-1">
-                <img src="/assets/images/eggs_009.png">
-            </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_009.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_005.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_009.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_005.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_009.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_010.png">
-                </div>
+
+
             </div>
         {% endfor %}
     </div>
