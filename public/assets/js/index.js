@@ -1,25 +1,35 @@
-const second = 1000,
-    minute = second * 60,
-    hour = minute * 60,
-    day = hour * 24;
+function t()
+{
+    var compteur=document.getElementById('compteur');
+    s=duree;
+    m=0;h=0;
+    if(s<0)
+    {
+        compteur.innerHTML="terminé<br />"+"<a href=http://lien1.fr>continuer</a>"
+    }
+    else
+    {
+        if(s>59)
+        {
+            m=Math.floor(s/60);
+            s=s-m*60
+        }
+        if(m>59)
+        {
+            h=Math.floor(m/60);
+            m=m-h*60
+        }
+        if(s<10)
+        {
+            s="0"+s
+        }
+        if(m<10)
+        {
+            m="0"+m
+        }
+        compteur.innerHTML=h+":"+m+":"+s+"<br /><a href=http://lien2.fr>interrompre</a>"
+    }
+    duree=duree-1;
+    window.setTimeout("t();",999);
 
-let countDown = new Date('Sep 30, 2019 00:00:00').getTime(),
-
-    x = setInterval(function() {
-
-        let now = new Date().getTime(),
-
-            distance = countDown - now;
-
-        document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
-
-            document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
-
-
-        //do something later when date is reached
-
-        //if (distance < 0) {
-
-        //  clearInterval(x);
-
-    }, second)
+}
