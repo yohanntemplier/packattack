@@ -7,48 +7,20 @@
 
     <div class="container-fluid">
 
-        {% for row in range (1, 10) %}
 
             <div class="row">
-                <div class="col-1">
-                     <img src="/assets/images/eggs_005.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_009.png">
-                </div>
+
+                {% for item in items %}
 
                 <div class="col-1">
-                    <img src="/assets/images/eggs_005.png">
+                    <img src="{{ random(['/assets/images/eggs_001.png', '/assets/images/eggs_002.png', '/assets/images/eggs_003.png','/assets/images/eggs_004.png',
+                        '/assets/images/eggs_005.png','/assets/images/eggs_007.png','/assets/images/eggs_008.png','/assets/images/eggs_009.png',
+                        '/assets/images/eggs_010.png']) }}">
                 </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_009.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_005.png">
+                {%  endfor %}
             </div>
-            <div class="col-1">
-                <img src="/assets/images/eggs_009.png">
-            </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_009.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_005.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_009.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_005.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_009.png">
-                </div>
-                <div class="col-1">
-                    <img src="/assets/images/eggs_010.png">
-                </div>
-            </div>
-        {% endfor %}
+
+
     </div>
 
 {% endblock %}
