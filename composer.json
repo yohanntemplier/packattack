@@ -1,19 +1,53 @@
 {
-    "name": "wilder13/pack_attack",
-    "require": {
-        "twig/twig": "^2.8",
-        "guzzlehttp/guzzle": "~6.0",
-        "phpro/grumphp": "^0.15.0"
-    },
+
+    "name": "aurel/simple-mvc",
+
+    "description": "Simple from scratch PHP MVC",
+
     "authors": [
+
         {
-            "name": "Andre Dupin",
-            "email": "dd.dupin@gmail.com"
+
+            "name": "Aurelien",
+
+            "email": "barbier.aurelien@wildcodeschool.fr"
+
         }
+
     ],
+
+    "minimum-stability": "stable",
+
+    "require": {
+
+        "php" : ">=7.2",
+
+        "ext-pdo" : "*",
+
+        "twig/twig": "^2.4",
+
+        "guzzlehttp/guzzle": "~6.0"
+
+    },
+
+    "require-dev": {
+
+        "phpro/grumphp": "^0.15.0",
+
+        "phpstan/phpstan": "^0.11.2",
+
+        "squizlabs/php_codesniffer": "*"
+
+    },
+
     "autoload": {
+
         "psr-4": {
+
             "App\\": "src/"
+
         }
+git s
     }
+
 }
