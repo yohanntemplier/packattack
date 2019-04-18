@@ -10,44 +10,38 @@
 namespace App\Model;
 
 use GuzzleHttp;
-/**
- *
- */
+
 class ItemManager extends AbstractManager
 {
-    /**
-     *
-     */
-
-
-    /**
-     *  Initializes this class.
-     */
-    /*public function __construct()
-    {
-        parent::__construct(self::TABLE);
-    }*/
-
-
-    public function vasChercherLesDonneesDelApi()
+    public function vasCherchertouslesoeufs()
     {
         $client = new GuzzleHttp\Client([
-                'base_uri' => 'http://easteregg.wildcodeschool.fr',
-            ]
-        );
+            'base_uri' => 'http://easteregg.wildcodeschool.fr',]);
 
-        $response = $client->request('GET', '/api/eggs');
+        $response = $client->request('GET', '/api/eggs/random');
 
 
         $body = $response->getBody();
 
 
-        $truc=$body->getContents();
-        $truc= GuzzleHttp\json_decode($truc,true);
+        $truc = $body->getContents();
+        $truc = GuzzleHttp\json_decode($truc, true);
         return $truc;
-
-
     }
 
 
+    public function vasChercherunoeufauhasard()
+    {
+        $client = new GuzzleHttp\Client(['base_uri' => 'http://easteregg.wildcodeschool.fr',]);
+
+        $response = $client->request('GET', '/api/eggs/random');
+
+
+        $body = $response->getBody();
+
+
+        $truc = $body->getContents();
+        $truc = GuzzleHttp\json_decode($truc, true);
+        return $truc;
+    }
 }
