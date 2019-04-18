@@ -15,7 +15,7 @@ class GameController extends AbstractController
             $oeuf = $itemManager->oeufhasard();
             $oeufs[] = $oeuf;
         }
-        for ($i = 0; $i < 15; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $mechant = $itemManager->mechanthasard();
             $mechants[] = $mechant;
         }
