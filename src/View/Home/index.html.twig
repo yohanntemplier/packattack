@@ -1,4 +1,29 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-{% block content %}
+<audio src="/assets/musiques/home.mp3" autoplay loop></audio>
+
+<div class="row">
+    <div class="title col-lg-12">
+        <h1>Course aux oeufs</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="rules col-lg-8 col-md-6 col-sm-6">
+        <h2><img src="/assets/images/logo.png" alt="image d'oeuf" class="logo"/>Règles du jeux<img src="/assets/images/logo.png" alt="image d'oeuf" class="logo"/></h2>
+        <ul>
+            <li><span>remplir son panier d'oeufs</span></li>
+            <li><span>attention aux voleurs</span></li>
+            <li><span>résous les énigmes</span></li>
+        </ul>
+
+    </div>
+    <div class="ready col-lg-4 col-md-6 col-sm-6">
+        <button type="button" href="../Game/Levelone.html.twig" class="play">Jouer</button>
+    </div>
+
+</div>
+
+
+{% endblock %}

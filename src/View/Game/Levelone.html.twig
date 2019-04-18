@@ -25,6 +25,43 @@
                 </div>
             </div>
     </div>
+    <div class="decompte" id="decompte">
+
+
+    </div>
+
+    <script>
+        var decompte = function (i) {
+            document.getElementById("decompte").innerHTML = i + "s";
+        }
+        var affichage = function () {
+            document.getElementById("decompte").innerHTML = "game over";
+
+        }
+
+        var temp = 0;
+
+        var decrement = function () {
+
+            for (var i = 60; i > -1; i--) {
+                setTimeout((function (s) {
+
+                    return function () {
+                        decompte(s);
+
+                    }
+
+                })(i), temp);
+                temp += 1000;
+            }
+
+        }
+
+        decrement();
+        setTimeout(affichage , temp-1000 );
+        //affichage();
+
+    </script>
 
 {% endblock %}
 
