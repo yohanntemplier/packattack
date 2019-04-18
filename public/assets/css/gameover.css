@@ -1,0 +1,14 @@
+body {
+    background-color: #212121;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: #ECD721;
+    font-size: 6rem;
+    text-align: center;
+    padding-top: 25rem;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
