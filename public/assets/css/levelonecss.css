@@ -1,8 +1,9 @@
 body {
-    padding-top: 100px;
+    padding-top: 250px;
     background-image: url("../images/garden.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Press Start 2P', cursive;
 
 }
 .container-fluid {
@@ -12,10 +13,49 @@ body {
     object-fit: cover;
     position: relative;
     padding : 6px;
+    -webkit-filter: grayscale(0) blur(0px);
+    filter: grayscale(0) blur(0px);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 .col-1:hover {
     opacity: 1;
+    width: 150px; /* on affiche l'image au carré */
+    height: 150px;
+    border-radius: 50%;  /* on arrondit l'image */
+    -webkit-transform: rotate(360deg); /* rotation de l'image */
+    transform: rotate(360deg);
 }
 .col-1 {
     opacity: 0;
+}
+
+.card-header {
+    background-color: cadetblue;
+}
+
+
+.img-thumbnail {
+    margin-left: 20px;
+    height:400px;
+    width: 400px;
+    border-style: hidden;
+}
+
+.modal {
+    opacity: 0.9;
+
+}
+
+.card {
+    border-style: hidden;
+}
+
+h3 {
+    color: #212121!important;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.mystere {
+    height: 20%;
 }
