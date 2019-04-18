@@ -21,6 +21,9 @@ class GameController extends AbstractController
             $mechant = $itemManager->mechanthasard();
             $mechants[] = $mechant;
         }
-        return $this->twig->render('Game/index.html.twig', ['items' => [$mechants, $oeufs]]);
+            $items=array_merge($oeufs, $mechants);
+            shuffle($items);
+
+        return $this->twig->render('Game/index.html.twig', ['items' => $items]);
     }
 }
