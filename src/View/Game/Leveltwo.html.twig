@@ -1,17 +1,29 @@
 {% extends 'layout.html.twig' %}
+{% block title %}{% endblock %}
 
-{% block stylesheet %}<link rel="stylesheet" href="/assets/css/leveltwocss.css">
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/leveltwocss.css">
 {% endblock %}
 
 {% block page %}
-    <audio src="/assets/musiques/leveltwo.mp3" autoplay loop></audio>
+<div class="container-fluid">
     {% include 'Game/_modal.html.twig' %}
-    <div class="container-fluid"id="compteur">
+    {% include 'Game/_modalmystere.html.twig' %}
 
-        <button type="button" class="btn btn-danger offset-11"> EGGS</button>
+    <div class="row compteur offset-5">
+        <div class="col-4">
+            <h1 id="compteur" class="text-center text-white display-1"></h1>
+
+
+    {% include 'Game/_modal.html.twig' %}
+    <div class="container-fluid">
+
+
+    {% include 'Game/_modal.html.twig' %}
         <div class="row">
             {% for item in items %}
                 <div class="col-1">
+
                     <a data-target="#modal{{ loop.index }}" data-toggle="modal">
                         <img src="{{ random(['/assets/images/eggs_001.png', '/assets/images/eggs_002.png', '/assets/images/eggs_003.png','/assets/images/eggs_004.png',
                             '/assets/images/eggs_005.png','/assets/images/eggs_007.png','/assets/images/eggs_008.png','/assets/images/eggs_009.png',
@@ -19,8 +31,10 @@
                     </a>
                 </div>
             {%  endfor %}
+            <div id ="compteur"> blablabla</div>
         </div>
     </div>
+
     <script>
         var compteur = 30;
         decompte();
@@ -29,10 +43,15 @@
             compteur -= 1;
             document.getElementById('compteur').innerHTML = compteur;
 
-            if (compteur == 2) {
+            if (compteur < 2) {
                 document.location.href = "../../Game/GameOver";
             }
             setTimeout(decompte, 1000);
         }
     </script>
+
 {% endblock %}
+{% block javascript %}
+<script src = "/assets/js/Levelone.js" crossorigin = "anonymous" > </script>
+{% endblock %}
+

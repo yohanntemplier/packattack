@@ -1,4 +1,4 @@
-var compteur = 70000;
+var compteur = 60;
 decompte();
 
 function decompte() {
@@ -21,4 +21,21 @@ function incrementValue(nombre)
     }
     document.getElementById('number').value = value;
 
+}
+function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.style.display == 'block')
+        e.style.display = 'hide';
+    else
+        e.style.display = 'block';
+}
+function hideStuff(id) {
+    document.getElementById(id).style.visibility = 'hidden';
+}
+
+function win(value){
+    document.getElementById('number').value = value;
+    if (value >=50) {
+        document.location.href="../../Game/successone"
+    }
 }

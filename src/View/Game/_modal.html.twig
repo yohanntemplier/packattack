@@ -1,24 +1,24 @@
 <!-- Modal -->
 {% for item in items %}
-    <div class="modal fade" id="modal{{ loop.index }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+    <div class="modal fade" id="modal{{ loop.index }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{ loop.index }}" data-backdrop="static"
+         aria-hidden="true" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="card mb-3">
-                        <h3 class="card-header">{{ item.name }}</h3>
+                        <h3 class="card-header text-center">{{ item.name }}</h3>
                         <div class="card-body">
                             <h5 class="card-title">{{ item.species }}{{ item.rarity ?  item['rarity'] }}</h5>
-                            <h6 class="card-subtitle text-muted">{{ item.gender }}</h6>
+                            <h6 class="card-subtitle">{{ item.gender }}</h6>
                         </div>
-                        <img src="{{ item.image }}" alt="Card image" class="img-fluid img-thumbnail>
-                    <div class="card-body">
+                        <div class="card-img">
+                        <img src="{{ item.image }}" alt="Card image" class="img-fluid img-thumbnail">
+                        </div>
                     </div>
                     <ul class="list-group list-group-flush">
                         {% if item.skills is defined %}
                             {% for skill in item.skills|slice(0,1) %}
-                                {% set attack = random(2,20) %}
-                                    <li class="list-group-item row justify-content-center">{{ item.name|length }}</li>
+                                    <li class="list-group-item row justify-content-center">Attack:{{ item.name|length }}</li>
                             {% endfor %}
                         {% endif %}
                         <li class="list-group-item row justify-content-center">{{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='junk' ? '0' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }}
@@ -31,12 +31,10 @@
                         {% else %}
                             Bravo tu as gagné  {{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }} choco miam !!
                         {% endif %}
-                        {{ dump(attack) }}
                     </div>
                     {% endif %}
                     <div class="card-body row justify-content-center">
-                        <input type="button" data-dismiss="modal{{ loop.index }}" onclick="incrementValue({% if item.skills is defined %}{{ -item.name|length }}{% endif %}{{ item['rarity']=='junk' ? 0 }}{{ item['rarity'] =='basic' ? 2 }}{{ item['rarity'] =='fine' ? 4 }}{{ item['rarity'] =='masterwork' ? 6 }}{{ item['rarity'] =='rare' ? 8 }}{{ item['rarity'] =='exotic' ? 10 }}{{ item['rarity'] =='ascended' ? 12 }}{{ item['rarity'] =='legendary' ? 20 }})" value="Increment Value" />
-
+                        <input class="close" type="button"  data-dismiss="modal" onclick="incrementValue({% if item.skills is defined %}{{ -item.name|length }}{% endif %}{{ item['rarity']=='junk' ? 0 }}{{ item['rarity'] =='basic' ? 2 }}{{ item['rarity'] =='fine' ? 4 }}{{ item['rarity'] =='masterwork' ? 6 }}{{ item['rarity'] =='rare' ? 8 }}{{ item['rarity'] =='exotic' ? 10 }}{{ item['rarity'] =='ascended' ? 12 }}{{ item['rarity'] =='legendary' ? 20 }})" value="Increment Value"/>
                     </div>
                 </div>
             </div>
