@@ -11,17 +11,20 @@ function decompte() {
     setTimeout(decompte, 1000);
 }
 
-function incrementValue(nombre)
-{
+function incrementValue(nombre) {
     var value = parseInt(document.getElementById('number').value, 10);
     value = isNaN(value) ? 0 : value;
-    value= value+nombre;
-    if(value<=0){
-        value=0;
+    value = value + nombre;
+    if (value >= 30) {
+        document.location.href = "../../Game/Success1";
+    }
+    if (value <= 0) {
+        value = 0;
     }
     document.getElementById('number').value = value;
 
 }
+
 function toggle_visibility(id) {
     var e = document.getElementById(id);
     if (e.style.display == 'block')
@@ -29,6 +32,7 @@ function toggle_visibility(id) {
     else
         e.style.display = 'block';
 }
+
 function hideStuff(id) {
     document.getElementById(id).style.visibility = 'hidden';
 }
