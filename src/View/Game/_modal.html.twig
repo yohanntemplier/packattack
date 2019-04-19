@@ -9,10 +9,11 @@
                         <h3 class="card-header">{{ item.name }}</h3>
                         <div class="card-body">
                             <h5 class="card-title">{{ item.species }}{{ item.rarity ?  item['rarity'] }}</h5>
-                            <h6 class="card-subtitle text-muted">{{ item.gender }}</h6>
+                            <h6 class="card-subtitle">{{ item.gender }}</h6>
                         </div>
-                        <img src="{{ item.image }}" alt="Card image" class="img-fluid img-thumbnail>
-                    <div class="card-body">
+                        <div class="card-img">
+                        <img src="{{ item.image }}" alt="Card image" class="img-fluid img-thumbnail">
+                        </div>
                     </div>
                     <ul class="list-group list-group-flush">
                         {% if item.skills is defined %}

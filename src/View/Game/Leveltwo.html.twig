@@ -4,11 +4,14 @@
 {% endblock %}
 
 {% block page %}
-    <audio src="/assets/musiques/leveltwo.mp3" autoplay loop></audio>
-    {% include 'Game/_modal.html.twig' %}
-    <div class="container-fluid"id="compteur">
+    <div class="container-fluid">
 
-        <button type="button" class="btn btn-danger offset-11"> EGGS</button>
+    <div class="compteur offset-5">
+        <h1 id="compteur" class="text-center text-white display-1"></h1>
+    </div>
+    <audio src="/assets/musiques/leveltwo.mp3" autoplay loop></audio>
+
+    {% include 'Game/_modal.html.twig' %}
         <div class="row">
             {% for item in items %}
                 <div class="col-1">
@@ -21,18 +24,9 @@
             {%  endfor %}
         </div>
     </div>
-    <script>
-        var compteur = 30;
-        decompte();
-
-        function decompte() {
-            compteur -= 1;
-            document.getElementById('compteur').innerHTML = compteur;
-
-            if (compteur == 2) {
-                document.location.href = "../../Game/GameOver";
-            }
-            setTimeout(decompte, 1000);
-        }
-    </script>
+ >
 {% endblock %}
+{% block javascript %}
+<script src = "/assets/js/Levelone.js" crossorigin = "anonymous" > </script>
+{% endblock %}
+
