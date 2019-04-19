@@ -1,6 +1,6 @@
 <!-- Modal -->
 {% for item in items %}
-    <div class="modal fade" id="modal{{ loop.index }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="modal{{ loop.index }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{ loop.index }}"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -32,12 +32,10 @@
                         {% else %}
                             Bravo tu as gagné  {{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }} choco miam !!
                         {% endif %}
-                        {{ dump(attack) }}
                     </div>
                     {% endif %}
                     <div class="card-body row justify-content-center">
-                        <input type="button" data-dismiss="modal{{ loop.index }}" onclick="incrementValue({% if item.skills is defined %}{{ -item.name|length }}{% endif %}{{ item['rarity']=='junk' ? 0 }}{{ item['rarity'] =='basic' ? 2 }}{{ item['rarity'] =='fine' ? 4 }}{{ item['rarity'] =='masterwork' ? 6 }}{{ item['rarity'] =='rare' ? 8 }}{{ item['rarity'] =='exotic' ? 10 }}{{ item['rarity'] =='ascended' ? 12 }}{{ item['rarity'] =='legendary' ? 20 }})" value="Increment Value" />
-
+                        <input class="close" type="button"  data-dismiss="modal" onclick="incrementValue({% if item.skills is defined %}{{ -item.name|length }}{% endif %}{{ item['rarity']=='junk' ? 0 }}{{ item['rarity'] =='basic' ? 2 }}{{ item['rarity'] =='fine' ? 4 }}{{ item['rarity'] =='masterwork' ? 6 }}{{ item['rarity'] =='rare' ? 8 }}{{ item['rarity'] =='exotic' ? 10 }}{{ item['rarity'] =='ascended' ? 12 }}{{ item['rarity'] =='legendary' ? 20 }})" value="Increment Value"/>
                     </div>
                 </div>
             </div>

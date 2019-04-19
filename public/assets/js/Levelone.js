@@ -22,3 +22,10 @@ function incrementValue(nombre)
     document.getElementById('number').value = value;
 
 }
+function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.style.display == 'block')
+        e.style.display = 'hide';
+    else
+        e.style.display = 'block';
+}
