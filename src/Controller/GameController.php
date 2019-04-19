@@ -6,6 +6,7 @@ use App\Model\GameManager;
 
 class GameController extends AbstractController
 {
+
     public function index()
     {
         $mechants = [];
@@ -34,6 +35,11 @@ class GameController extends AbstractController
     public function success2()
     {
         return $this->twig->render('Game/Success2.html.twig');
+    }
+
+    public function success3()
+    {
+        return $this->twig->render('Game/Success3.html.twig');
     }
 
     public function leveltwo()
