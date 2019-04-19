@@ -51,7 +51,7 @@ body {
 }
 .modal-content {
     width: 450px;
-    height: 500px;
+
 }
 .card {
     border-style: hidden;
@@ -63,18 +63,30 @@ h3, h1 {
     font-family: 'Press Start 2P', cursive;
 }
 
-.compteur {
+.compteur{
+    padding-left: 10px;
     border-radius: 25px;
     background-color: #044F67;
     width: 280px;
     height: 120px;
-    padding-top: 20px;
+    padding-top: 30px;
     padding-bottom: 20px;
     box-shadow:3px 3px 12px #999;
     opacity: 0.8;
 
 }
-
+.panier {
+    border: #FFFFFF solid 5px;
+    border-radius: 25px;
+    background-color: darkseagreen;
+    width: 60px;
+    height: 60px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    color: #212121;
+    opacity: 1!important;
+    font-size: 22px;
+}
 .display-1 {
     font-size: 60px;
 }
@@ -82,3 +94,10 @@ h3, h1 {
 h3 {
     font-size: 20px;
 }
+
+h1 {
+    font-size: 45px!important;
+}
+
+
+
