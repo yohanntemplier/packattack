@@ -1,0 +1,38 @@
+<!-- Modal -->
+{% for item in items %}
+    <div class="modal fade" id="modal{{ loop.index }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="card mb-3">
+                        <h3 class="card-header">{{ item.name }}</h3>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.species }}{{ item.rarity ?  item['rarity'] }}</h5>
+                            <h6 class="card-subtitle text-muted">{{ item.gender }}</h6>
+                        </div>
+                        <img src="{{ item.image }}" alt="Card image" class="img-fluid img-thumbnail>
+                    <div class="card-body">
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        {% if item.skills is defined %}
+                            {% for skill in item.skills|slice(0,1) %}
+                                    <li class="list-group-item">{{ skill }}</li>
+                            {% endfor %}
+                        {% endif %}
+                        <li class="list-group-item">{{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='junk' ? '0' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }}</li>
+                    </ul>
+                    {% if item.skills is not defined %}
+                    <div class="card-body">
+                        Bravo  tu as gagné {{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }} choco miam !!
+                        {{ item['rarity'] =='junk' ? ' oh ! non pas de choco miam !' }}
+                    </div>
+                    {% endif %}
+                    <div class="card-body row justify-content-center">
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

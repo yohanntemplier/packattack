@@ -1,6 +1,9 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Items</h1>
-    {{ dump(item) }}
+{{ dump(item) }}
+    {% for item in items %}
+{{ item }}
+    <br><br>
+    {% endfor %}
 {% endblock %}

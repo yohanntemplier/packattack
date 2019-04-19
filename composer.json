@@ -1,5 +1,9 @@
 {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 92d6517515479a144dc927084086643b45ac78b5
     "name": "aurel/simple-mvc",
 
     "description": "Simple from scratch PHP MVC",
@@ -50,4 +54,8 @@
 
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 92d6517515479a144dc927084086643b45ac78b5
