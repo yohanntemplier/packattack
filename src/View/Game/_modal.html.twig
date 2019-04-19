@@ -27,9 +27,9 @@
                     {% if item.skills is not defined %}
                     <div class="card-body " >
                         {% if item['rarity']=='junk' %}
-                         oh!! non pas de choco miam
+                         oh!! no there is no choco miam
                         {% else %}
-                            Bravo tu as gagné  {{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }} choco miam !!
+                            Well done you won  {{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }} choco miam !!
                         {% endif %}
                     </div>
                     {% endif %}
