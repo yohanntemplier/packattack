@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block page %}
+
     <div class="container-fluid">
         {% include 'Game/_modal.html.twig' %}
         {% include 'Game/_modalmystere.html.twig' %}
@@ -14,8 +15,13 @@
             <h1 id="compteur" class="text-center text-white display-1"></h1>
         </div>
         <audio src="/assets/musiques/levelone.mp3" autoplay loop></audio>
+        <form>
+            <input type="button" id="number" value="0"/>
 
+        </form>
+        <p id="demo"></p>
         <div class="row">
+
             {% for item in items %}
                 <div class="col-1">
                     <a data-target="#modal{{ loop.index }}" data-toggle="modal">
