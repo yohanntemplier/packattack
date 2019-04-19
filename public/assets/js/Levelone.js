@@ -18,7 +18,7 @@ function incrementValue(nombre) {
     if (value >= 30) {
         document.location.href = "../../Game/Success1";
     }
-    if (value <= 0) {
+    if (value <= 2) {
         value = 0;
     }
     document.getElementById('number').value = value;
