@@ -12,21 +12,18 @@ class GameController extends AbstractController
         $mechants = [];
         $oeufs = [];
         $itemManager = new GameManager();
-        for ($i = 0; $i < 40; $i++) {
+        for ($i = 0; $i < 35; $i++) {
             $oeuf = $itemManager->oeufhasard();
             $oeufs[] = $oeuf;
         }
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             $mechant = $itemManager->mechanthasard();
             $mechants[] = $mechant;
         }
         $items = array_merge($oeufs, $mechants);
         shuffle($items);
-
         return $this->twig->render('Game/Levelone.html.twig', ['items' => $items]);
     }
-
-
     public function success1()
     {
         return $this->twig->render('Game/Success1.html.twig');

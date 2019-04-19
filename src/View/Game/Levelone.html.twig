@@ -1,49 +1,43 @@
 {% extends 'layout.html.twig' %}
+{% block title %}{% endblock %}
 
-{% block stylesheet %}<link rel="stylesheet" href="/assets/css/levelonecss.css">
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/levelonecss.css">
 {% endblock %}
 
 {% block page %}
-    <audio src="/assets/musiques/levelone.mp3" autoplay loop></audio>
-{% include 'Game/_modal.html.twig' %}
-    {% include 'Game/_modalmystere.html.twig' %}
+
     <div class="container-fluid">
-        <audio src="http://le_serveur/lechemin/verslefichier.mp3" autoplay loop></audio>
-        <button type="button" class="btn btn-danger offset-11"> EGGS</button>
-            <div class="row"id="compteur">
-                {% for item in items %}
+        {% include 'Game/_modal.html.twig' %}
+        {% include 'Game/_modalmystere.html.twig' %}
+
+        <div class="compteur offset-5">
+            <h1 id="compteur" class="text-center text-white display-1"></h1>
+        </div>
+        <audio src="/assets/musiques/levelone.mp3" autoplay loop></audio>
+        <form>
+            <input type="button" id="number" value="0"/>
+
+        </form>
+        <p id="demo"></p>
+        <div class="row">
+
+            {% for item in items %}
                 <div class="col-1">
                     <a data-target="#modal{{ loop.index }}" data-toggle="modal">
-                    <img src="{{ random(['/assets/images/eggs_001.png', '/assets/images/eggs_002.png', '/assets/images/eggs_003.png','/assets/images/eggs_004.png',
-                        '/assets/images/eggs_005.png','/assets/images/eggs_007.png','/assets/images/eggs_008.png','/assets/images/eggs_009.png',
-                        '/assets/images/eggs_010.png']) }}">
-                    </a>
+                        <img src="{{ random(['/assets/images/eggs_001.png', '/assets/images/eggs_002.png', '/assets/images/eggs_003.png','/assets/images/eggs_004.png',
+                            '/assets/images/eggs_005.png','/assets/images/eggs_007.png','/assets/images/eggs_008.png','/assets/images/eggs_009.png',
+                            '/assets/images/eggs_010.png']) }}"></a>
                 </div>
-                {%  endfor %}
-                <div class="col-1 mystere">
-                    <a data-target="#modalmystere" data-toggle="modal">
-                        <img src="/assets/images/eggmystere.png"></a>
-                </div>
+            {% endfor %}
+            <div class="col-1 mystere ">
+                <a data-target="#modalmystere" data-toggle="modal">
+                    <img src="/assets/images/eggmystere.png"></a>
             </div>
-
-
-
+        </div>
     </div>
-
-    <script>
-        var compteur = 30;
-        decompte();
-
-        function decompte() {
-            compteur -= 1;
-            document.getElementById('compteur').innerHTML = compteur;
-
-            if (compteur == 2) {
-                document.location.href = "../../Game/GameOver";
-            }
-            setTimeout(decompte, 1000);
-        }
-    </script>
-
+{% endblock %}
+{% block javascript %}
+<script src = "/assets/js/Levelone.js" crossorigin = "anonymous" > </script>
 {% endblock %}
 
