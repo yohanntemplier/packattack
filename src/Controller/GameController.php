@@ -24,6 +24,7 @@ class GameController extends AbstractController
         shuffle($items);
         return $this->twig->render('Game/Levelone.html.twig', ['items' => $items]);
     }
+
     public function success1()
     {
         return $this->twig->render('Game/Success1.html.twig');
