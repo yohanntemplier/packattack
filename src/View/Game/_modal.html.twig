@@ -17,7 +17,7 @@
                     <ul class="list-group list-group-flush">
                         {% if item.skills is defined %}
                             {% for skill in item.skills|slice(0,1) %}
-                                    <li class="list-group-item row justify-content-center">{{ skill }}</li>
+                                    <li class="list-group-item row justify-content-center">Attack {{ random(2,20) }}</li>
                             {% endfor %}
                         {% endif %}
                         <li class="list-group-item row justify-content-center">{{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='junk' ? '0' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }}
