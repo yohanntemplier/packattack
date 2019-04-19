@@ -32,4 +32,3 @@ function toggle_visibility(id) {
 function hideStuff(id) {
     document.getElementById(id).style.visibility = 'hidden';
 }
-$('#modalmystere').modal({ backdrop: 'static', keyboard: true });
