@@ -42,7 +42,7 @@ class GameController extends AbstractController
         shuffle($items);
         return $this->twig->render('Game/Leveltwo.html.twig', ['items' => $items]);
     }
-    public function GameOver()
+    public function gameOver()
     {
         $mechants = [];
         $oeufs = [];
@@ -59,5 +59,4 @@ class GameController extends AbstractController
         shuffle($items);
         return $this->twig->render('Game/gameover.html.twig', ['items' => $items]);
     }
-
 }
