@@ -1,5 +1,5 @@
 body {
-    padding-top: 250px;
+    padding-top: 50px;
     background-image: url("../images/garden.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,11 +34,14 @@ body {
     background-color: cadetblue;
 }
 
-
+.card-img {
+    height:250px;
+    width: 250px;
+}
 .img-thumbnail {
+    padding-left: 70px;
+    object-fit: contain;
     margin-left: 20px;
-    height:400px;
-    width: 400px;
     border-style: hidden;
 }
 
@@ -46,12 +49,55 @@ body {
     opacity: 0.9;
 
 }
+.modal-content {
+    width: 450px;
 
+}
 .card {
     border-style: hidden;
 }
 
-h3 {
+
+h3, h1 {
     color: #212121!important;
     font-family: 'Press Start 2P', cursive;
 }
+
+.compteur{
+    padding-left: 10px;
+    border-radius: 25px;
+    background-color: #044F67;
+    width: 280px;
+    height: 120px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    box-shadow:3px 3px 12px #999;
+    opacity: 0.8;
+
+}
+.panier {
+    border: #FFFFFF solid 5px;
+    border-radius: 25px;
+    background-color: darkseagreen;
+    width: 60px;
+    height: 60px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    color: #212121;
+    opacity: 1!important;
+    font-size: 22px;
+}
+.display-1 {
+    font-size: 60px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 45px!important;
+}
+
+
+

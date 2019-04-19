@@ -1,26 +1,35 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+
+<div class="container">
+
 <audio src="/assets/musiques/home.mp3" autoplay loop></audio>
 
 <div class="row">
     <div class="title col-lg-12">
-        <h1>Course aux oeufs</h1>
+        <h1>egg race</h1>
     </div>
 </div>
 
 <div class="row">
+
+        <h2><img id="imgtourne" src="/assets/images/logo.png" alt="image d'oeuf" class="logo"/>rules of the game<img id="imgtourne" src="/assets/images/logo.png" alt="image d'oeuf" class="logo"/></h2>
     <div class="rules col-lg-8 col-md-6 col-sm-6">
-        <h2><img src="/assets/images/logo.png" alt="image d'oeuf" class="logo"/>Règles du jeux<img src="/assets/images/logo.png" alt="image d'oeuf" class="logo"/></h2>
-        <ul>
-            <li><span>remplir son panier d'oeufs</span></li>
-            <li><span>attention aux voleurs</span></li>
-            <li><span>résous les énigmes</span></li>
-        </ul>
+            <p><img id="imgtourne" src="/assets/images/lapin.png" alt="image d'oeuf" class="lapin"/>tucking his egg basket</p>
+            <p><img id="imgtourne" src="/assets/images/lapin.png" alt="image d'oeuf" class="lapin"/>watch out for thieves</p>
+            <p><img id="imgtourne" src="/assets/images/lapin.png" alt="image d'oeuf" class="lapin"/>solve riddles</p>
+
 
     </div>
     <div class="ready col-lg-4 col-md-6 col-sm-6">
-        <a href="/Game/index"><button type="button"  class="play">Jouer</button></a>
+        <a href="/Game/index"><button type="button"  class="play">Play</button></a>
+    </div>
 
 </div>
 </div>
