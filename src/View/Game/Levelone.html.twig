@@ -15,7 +15,7 @@
             <h1 id="compteur" class="text-center text-white display-1"></h1>
 
             <form>
-                <input class="panier offset-5" type="button" id="number" value="0"/>
+                <input class="panier offset-5" type="button" id="number" value="0" />
 
             </form>
             <p id="demo"></p>
@@ -31,15 +31,26 @@
             {% for item in items %}
 
                 <div class="col-1"id="egg{{ loop.index }}" >
-                    <a data-target="#modal{{ loop.index }}" data-toggle="modal" onclick="hideStuff('egg{{ loop.index }}')">
+                    <a data-target="#modal{{ loop.index }}" data-toggle="modal" onclick="hideStuff('egg{{ loop.index }}')" data-backdrop="static">
                         <img src="{{ random(['/assets/images/eggs_001.png', '/assets/images/eggs_002.png', '/assets/images/eggs_003.png','/assets/images/eggs_004.png',
                             '/assets/images/eggs_005.png','/assets/images/eggs_007.png','/assets/images/eggs_008.png','/assets/images/eggs_009.png',
                             '/assets/images/eggs_010.png', '/assets/images/vador.png', '/assets/images/songoku.png']) }}"></a></div>
             {% endfor %}
 
         </div>
+
+        <div class="col-1 mystere ">
+            <div data-target="#modalmystere" data-toggle="modal">
+                <div class="col-1 mystere " id="special-egg">
+                    <a data-target="#modalmystere" data-toggle="modal" onclick="hideStuff('special-egg')" >
+                    <img src="/assets/images/eggmystere.png"></a>
+            </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
 {% block javascript %}
-<script src = "/assets/js/Levelone.js" crossorigin = "anonymous" > </script>
+<script src = "/assets/js/Levelone.js"crossorigin = "anonymous" > </script>
 {% endblock %}
 
