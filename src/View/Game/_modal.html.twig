@@ -17,15 +17,19 @@
                     <ul class="list-group list-group-flush">
                         {% if item.skills is defined %}
                             {% for skill in item.skills|slice(0,1) %}
-                                    <li class="list-group-item">{{ skill }}</li>
+                                    <li class="list-group-item row justify-content-center">{{ skill }}</li>
                             {% endfor %}
                         {% endif %}
-                        <li class="list-group-item">{{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='junk' ? '0' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }}</li>
+                        <li class="list-group-item row justify-content-center">{{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='junk' ? '0' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }}
+                        </li>
                     </ul>
                     {% if item.skills is not defined %}
                     <div class="card-body">
-                        Bravo  tu as gagné {{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }} choco miam !!
-                        {{ item['rarity'] =='junk' ? ' oh ! non pas de choco miam !' }}
+                        {% if item['rarity']=='junk' %}
+                         oh!! non pas de choco miam
+                        {% else %}
+                       Bravo tu as gagné {{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }} choco miam !!
+                    {% endif %}
                     </div>
                     {% endif %}
                     <div class="card-body row justify-content-center">
