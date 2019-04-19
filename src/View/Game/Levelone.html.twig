@@ -11,30 +11,38 @@
         {% include 'Game/_modal.html.twig' %}
         {% include 'Game/_modalmystere.html.twig' %}
 
-        <div class="compteur offset-5">
+        <div class="row compteur offset-5">
+            <div class="col-4">
             <h1 id="compteur" class="text-center text-white display-1"></h1>
+
+            <form>
+                <input class="panier offset-5" type="button" id="number" value="0"/>
+
+            </form>
+            <p id="demo"></p>
+        </div>
         </div>
         <audio src="/assets/musiques/levelone.mp3" autoplay loop></audio>
-        <form>
-            <input type="button" id="number" value="0"/>
 
-        </form>
-        <p id="demo"></p>
+        {% for i in range (1 ,2) %}
         <div class="row">
+        {% for item in items %}
 
-            {% for item in items %}
                 <div class="col-1">
                     <a data-target="#modal{{ loop.index }}" data-toggle="modal">
                         <img src="{{ random(['/assets/images/eggs_001.png', '/assets/images/eggs_002.png', '/assets/images/eggs_003.png','/assets/images/eggs_004.png',
                             '/assets/images/eggs_005.png','/assets/images/eggs_007.png','/assets/images/eggs_008.png','/assets/images/eggs_009.png',
                             '/assets/images/eggs_010.png']) }}"></a>
                 </div>
-            {% endfor %}
-            <div class="col-1 mystere ">
-                <a data-target="#modalmystere" data-toggle="modal">
+           {% endfor %}
+        </div>
+
+        {% endfor %}
+            <div class="col-1 mystere "><a data-target="#modalmystere" data-toggle="modal">
                     <img src="/assets/images/eggmystere.png"></a>
             </div>
-        </div>
+
+
     </div>
 {% endblock %}
 {% block javascript %}
