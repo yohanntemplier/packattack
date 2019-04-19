@@ -21,10 +21,12 @@
                                     <li class="list-group-item row justify-content-center">Attack:{{ item.name|length }}</li>
                                 <div class="row ml-1"><p>Give me your eggs !!</p> </div>
                             {% endfor %}
-                        {% endif %}
-                        <li class="list-group-item row justify-content-center">{{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='junk' ? '0' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }}
+                        {% else %}
+                        <li class="list-group-item row text-center justify-content-center">{{ item['rarity'] =='basic' ? '2' }}{{ item['rarity'] =='junk' ? '0' }}{{ item['rarity'] =='fine' ? '4' }}{{ item['rarity'] =='masterwork' ? '6' }}{{ item['rarity'] =='rare' ? '8' }}{{ item['rarity'] =='exotic' ? '10' }}{{ item['rarity'] =='ascended' ? '12' }}{{ item['rarity'] =='legendary' ? '20' }}
+
                         </li>
                     </ul>
+                            {% endif %}
                     </div>
                     </div>
                     {% if item.skills is not defined %}
@@ -38,8 +40,8 @@
                         {% endif %}
                     </div>
                     {% endif %}
-                    <div class="card-body row justify-content-center">
-                        <input style="color: #212121;" class="close" type="button"  data-dismiss="modal" onclick="incrementValue({% if item.skills is defined %}{{ -item.name|length }}{% endif %}{{ item['rarity']=='junk' ? 0 }}{{ item['rarity'] =='basic' ? 2 }}{{ item['rarity'] =='fine' ? 4 }}{{ item['rarity'] =='masterwork' ? 6 }}{{ item['rarity'] =='rare' ? 8 }}{{ item['rarity'] =='exotic' ? 10 }}{{ item['rarity'] =='ascended' ? 12 }}{{ item['rarity'] =='legendary' ? 20 }})" {% if item.skills is defined %}value="Mouahahaha!" {% else %}value="Yeaaah!!"{% endif %} />
+                    <div class="card-body row justify-content-center ">
+                        <input style="color: #212121;" class="close " type="button"  data-dismiss="modal" onclick="incrementValue({% if item.skills is defined %}{{ -item.name|length }}{% endif %}{{ item['rarity']=='junk' ? 0 }}{{ item['rarity'] =='basic' ? 2 }}{{ item['rarity'] =='fine' ? 4 }}{{ item['rarity'] =='masterwork' ? 6 }}{{ item['rarity'] =='rare' ? 8 }}{{ item['rarity'] =='exotic' ? 10 }}{{ item['rarity'] =='ascended' ? 12 }}{{ item['rarity'] =='legendary' ? 20 }})" {% if item.skills is defined %}value="Mouahahaha!" {% elseif item['rarity']=='junk' %}value="Beeerk!!" {% else %}value="Yeaaah!!!"{% endif %} />
                     </div>
                 </div>
             </div>
