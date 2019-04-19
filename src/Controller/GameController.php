@@ -32,7 +32,7 @@ class GameController extends AbstractController
             $oeuf = $itemManager->oeufhasard();
             $oeufs[] = $oeuf;
         }
-        for ($i = 0; $i < 30; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $mechant = $itemManager->mechanthasard();
             $mechants[] = $mechant;
         }

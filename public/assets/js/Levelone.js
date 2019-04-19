@@ -1,4 +1,4 @@
-var compteur = 70000;
+var compteur = 60;
 decompte();
 
 function decompte() {
@@ -31,4 +31,11 @@ function toggle_visibility(id) {
 }
 function hideStuff(id) {
     document.getElementById(id).style.visibility = 'hidden';
+}
+
+function win(value){
+    document.getElementById('number').value = value;
+    if (value >=50) {
+        document.location.href="../../Game/successone"
+    }
 }

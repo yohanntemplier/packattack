@@ -26,7 +26,7 @@
         <div class="row">
             {% for item in items %}
                 <div class="col-1"id="egg{{ loop.index }}" >
-                    <a data-target="#modal{{ loop.index }}" data-toggle="modal" onclick="hideStuff('egg{{ loop.index }}')">
+                    <a data-target="#modal{{ loop.index }}" data-toggle="modal" onclick="hideStuff('egg{{ loop.index }}')" data-backdrop="static">
                         <img src="{{ random(['/assets/images/eggs_001.png', '/assets/images/eggs_002.png', '/assets/images/eggs_003.png','/assets/images/eggs_004.png',
                             '/assets/images/eggs_005.png','/assets/images/eggs_007.png','/assets/images/eggs_008.png','/assets/images/eggs_009.png',
                             '/assets/images/eggs_010.png']) }}"></a>
@@ -40,6 +40,6 @@
 
 {% endblock %}
 {% block javascript %}
-<script src = "/assets/js/Levelone.js" crossorigin = "anonymous" > </script>
+<script src = "/assets/js/Levelone.js"crossorigin = "anonymous" > </script>
 {% endblock %}
 
