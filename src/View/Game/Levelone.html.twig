@@ -1,15 +1,16 @@
 {% extends 'layout.html.twig' %}
-
+{% block title %}{% endblock %}
 {% block stylesheet %}<link rel="stylesheet" href="/assets/css/levelonecss.css">
 {% endblock %}
 
 {% block page %}
+    <h1 id="compteur" class="text-center text-white display-1"></h1>
 {% include 'Game/_modal.html.twig' %}
     {% include 'Game/_modalmystere.html.twig' %}
     <div class="container-fluid">
         <audio src="http://le_serveur/lechemin/verslefichier.mp3" autoplay loop></audio>
         <button type="button" class="btn btn-danger offset-11"> EGGS</button>
-            <div class="row"id="compteur">
+            <div class="row justify-content-center">
                 {% for item in items %}
                 <div class="col-1">
                     <a data-target="#modal{{ loop.index }}" data-toggle="modal">
@@ -19,30 +20,14 @@
                     </a>
                 </div>
                 {%  endfor %}
-                <div class="col-1 mystere">
+                <div class="col-1 mystere ">
                     <a data-target="#modalmystere" data-toggle="modal">
                         <img src="/assets/images/eggmystere.png"></a>
                 </div>
             </div>
-
-
-
     </div>
-
-    <script>
-        var compteur = 30;
-        decompte();
-
-        function decompte() {
-            compteur -= 1;
-            document.getElementById('compteur').innerHTML = compteur;
-
-            if (compteur == 2) {
-                document.location.href = "../../Game/GameOver";
-            }
-            setTimeout(decompte, 1000);
-        }
-    </script>
-
+{% endblock %}
+{% block javascript %}
+<script src="/assets/js/Levelone.js" crossorigin="anonymous"></script>
 {% endblock %}
 
