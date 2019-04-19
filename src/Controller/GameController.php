@@ -36,23 +36,23 @@ class GameController extends AbstractController
         return $this->twig->render('Game/Success2.html.twig');
     }
 
-        public function leveltwo()
-        {
-            $mechants = [];
-            $oeufs = [];
-            $itemManager = new GameManager();
-            for ($i = 0; $i < 65; $i++) {
-                $oeuf = $itemManager->oeufhasard();
-                $oeufs[] = $oeuf;
-            }
-            for ($i = 0; $i < 30; $i++) {
-                $mechant = $itemManager->mechanthasard();
-                $mechants[] = $mechant;
-            }
-            $items = array_merge($oeufs, $mechants);
-            shuffle($items);
-            return $this->twig->render('Game/Leveltwo.html.twig', ['items' => $items]);
+    public function leveltwo()
+    {
+        $mechants = [];
+        $oeufs = [];
+        $itemManager = new GameManager();
+        for ($i = 0; $i < 65; $i++) {
+            $oeuf = $itemManager->oeufhasard();
+            $oeufs[] = $oeuf;
         }
+        for ($i = 0; $i < 30; $i++) {
+            $mechant = $itemManager->mechanthasard();
+            $mechants[] = $mechant;
+        }
+        $items = array_merge($oeufs, $mechants);
+        shuffle($items);
+        return $this->twig->render('Game/Leveltwo.html.twig', ['items' => $items]);
+    }
 
     public function gameover()
     {
@@ -70,6 +70,5 @@ class GameController extends AbstractController
         $items = array_merge($oeufs, $mechants);
         shuffle($items);
         return $this->twig->render('Game/gameover.html.twig', ['items' => $items]);
-
     }
 }
