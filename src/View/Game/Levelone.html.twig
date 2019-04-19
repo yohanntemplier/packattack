@@ -33,19 +33,19 @@
                             '/assets/images/eggs_005.png','/assets/images/eggs_007.png','/assets/images/eggs_008.png','/assets/images/eggs_009.png',
                             '/assets/images/eggs_010.png']) }}"></a>
                 </div>
-
         {% endfor %}
-
         </div>
-
-        <div class="col-1 mystere "><a data-target="#modalmystere" data-toggle="modal">
+        <div class="col-1 mystere ">
+            <div data-target="#modalmystere" data-toggle="modal">
                 <div class="col-1 mystere " id="special-egg">
                     <a data-target="#modalmystere" data-toggle="modal" onclick="hideStuff('special-egg')" >
                     <img src="/assets/images/eggmystere.png"></a>
             </div>
-
+            </div>
+        </div>
+    </div>
 {% endblock %}
 {% block javascript %}
-<script src = "/assets/js/Levelone.js" crossorigin = "anonymous" > </script>
+<script src = "/assets/js/Levelone.js"crossorigin = "anonymous" > </script>
 {% endblock %}
 

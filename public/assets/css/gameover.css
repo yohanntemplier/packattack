@@ -8,8 +8,60 @@ h1 {
     color: #ECD721;
     font-size: 6rem;
     text-align: center;
-    padding-top: 25rem;
+    padding-top: 12rem;
     padding-left: 30px;
     padding-right: 30px;
 }
+.area {
+    text-align: center;
+    font-size: 2em;
+    color: #ECD721;
+    letter-spacing: -7px;
+    font-weight: 50;
+    text-transform: uppercase;
+    animation: blur .85s ease-out infinite;
+    text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+}
 
+@keyframes blur {
+    from {
+        text-shadow:0px 0px 10px #fff,
+        0px 0px 10px #fff,
+        0px 0px 25px #fff,
+        0px 0px 25px #fff,
+        0px 0px 25px #fff,
+        0px 0px 25px #fff,
+        0px 0px 25px #fff,
+        0px 0px 25px #fff,
+        0px 0px 50px #fff,
+        0px 0px 50px #fff,
+        0px 0px 50px #7B96B8,
+        0px 0px 150px #7B96B8,
+        0px 10px 100px #7B96B8,
+        0px 10px 100px #7B96B8,
+        0px 10px 100px #7B96B8,
+        0px 10px 100px #7B96B8,
+        0px -10px 100px #7B96B8,
+        0px -10px 100px #7B96B8;
+    }
+}
+
+.quit{
+    font-family: "Press Start 2P", sans-serif;
+    color: #FFFFFF;
+    background-color: #ECD721;
+    border-radius: 10px;
+    margin-top: 4em;
+    font-size: 2.5em;
+    margin-left: 4em;
+}
+
+.tryagain{
+    font-family: "Press Start 2P", sans-serif;
+    color: #FFFFFF;
+    background-color: #ECD721;
+    border-radius: 10px;
+    margin-top: 4em;
+    font-size: 2.5em;
+    margin-left: -0.5em;
+}
