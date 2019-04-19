@@ -5,7 +5,7 @@
 
 {% block page %}
     {% include 'Game/_modal.html.twig' %}
-    <div class="container-fluid">
+    <div class="container-fluid"id="compteur">
 
         <button type="button" class="btn btn-danger offset-11"> EGGS</button>
         <div class="row">
@@ -20,5 +20,18 @@
             {%  endfor %}
         </div>
     </div>
+    <script>
+        var compteur = 30;
+        decompte();
 
+        function decompte() {
+            compteur -= 1;
+            document.getElementById('compteur').innerHTML = compteur;
+
+            if (compteur == 2) {
+                document.location.href = "../../Game/GameOver";
+            }
+            setTimeout(decompte, 1000);
+        }
+    </script>
 {% endblock %}
