@@ -4,10 +4,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Press Start 2P', cursive;
-
 }
 .container-fluid {
     position: absolute;
+    position: fixed;
 }
 .col-1 {
     object-fit: cover;
@@ -47,10 +47,11 @@ body {
 
 .modal {
     opacity: 0.9;
-
 }
+
 .modal-content {
     width: 450px;
+
 
 }
 .card {
