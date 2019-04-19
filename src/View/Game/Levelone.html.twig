@@ -34,8 +34,16 @@
                             '/assets/images/eggs_005.png','/assets/images/eggs_007.png','/assets/images/eggs_008.png','/assets/images/eggs_009.png',
                             '/assets/images/eggs_010.png']) }}"></a>
                 </div>
+            <div class="col-1">
 
-           {% endfor %}
+                <a data-target="#modal{{ loop.index }}" data-toggle="modal">
+                    <img src="{{ random(['/assets/images/eggs_001.png', '/assets/images/eggs_002.png', '/assets/images/eggs_003.png','/assets/images/eggs_004.png',
+                        '/assets/images/eggs_005.png','/assets/images/eggs_007.png','/assets/images/eggs_008.png','/assets/images/eggs_009.png',
+                        '/assets/images/eggs_010.png']) }}"></a>
+            </div>
+
+
+        {% endfor %}
         </div>
 
 
