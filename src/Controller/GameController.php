@@ -74,4 +74,9 @@ class GameController extends AbstractController
         shuffle($items);
         return $this->twig->render('Game/gameover.html.twig', ['items' => $items]);
     }
+
+    public function success4()
+    {
+        return $this->twig->render('Game/sucessmyst.html.twig');
+    }
 }

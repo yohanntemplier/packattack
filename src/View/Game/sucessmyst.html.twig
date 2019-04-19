@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}<link rel="stylesheet" href="/assets/css/gameover.css">
+{% endblock %}
+
+{% block page %}
+
+    <audio src="/assets/musiques/sylvain.mp3" autoplay loop></audio>
+    <div class="container">
+
+        <div>
+                <img src="/assets/images/victory.gif" class="victory">
+        </div>
+
+        <div class="row">
+
+            <div class="ready col-lg-6 col-md-6 col-sm-6">
+                <a href="/Home/index"><button type="button"  class="quit">Quit</button></a>
+            </div>
+
+            <div class="ready col-lg-6 col-md-6 col-sm-6">
+                <a href="/Home/index"><button type="button"  class="tryagain">Try again</button></a>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
