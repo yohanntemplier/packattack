@@ -10,7 +10,7 @@ class GameManager extends AbstractManager
     public function touslesoeufs()
     {
         $client = new GuzzleHttp\Client([
-            'base_uri' => 'http://easteregg.wildcodeschool.fr',]);
+            'base_uri' => 'https://tours.wilders.dev',]);
 
         $response = $client->request('GET', '/api/eggs');
 
@@ -26,7 +26,7 @@ class GameManager extends AbstractManager
 
     public function oeufhasard()
     {
-        $client = new GuzzleHttp\Client(['base_uri' => 'http://easteregg.wildcodeschool.fr',]);
+        $client = new GuzzleHttp\Client(['base_uri' => 'https://tours.wilders.dev',]);
 
         $response = $client->request('GET', '/api/eggs/random');
 
@@ -41,7 +41,7 @@ class GameManager extends AbstractManager
 
     public function mechanthasard()
     {
-        $client = new GuzzleHttp\Client(['base_uri' => 'http://easteregg.wildcodeschool.fr',]);
+        $client = new GuzzleHttp\Client(['base_uri' => 'https://tours.wilders.dev',]);
 
         $response = $client->request('GET', '/api/characters/random');
 
